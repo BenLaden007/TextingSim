@@ -1,0 +1,48 @@
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local UI = Material.Load({
+     Title = "Texting Sim X",
+     Style = 1,
+     SizeX = 200,
+     SizeY = 160,
+     Theme = "Dark",
+      ColorOverrides = {
+        MainFrame = Color3.fromRGB(2, 2, 2)
+      }
+
+    })
+local Page = UI.New({
+    Title = "BaconHub"
+})
+
+ Page.Button({
+        Text = "buy cyborg",
+        Callback = function()
+wait(0) do
+    
+local ohInstance1 = game:GetService("ReplicatedStorage").IngameItems.Crates["0528"]
+
+game:GetService("ReplicatedStorage").Events.PurchaseCrate:FireServer(ohInstance1)
+end
+end
+})
+
+Page.Button({
+        Text = "autofarm",
+        Callback = function()
+while wait(0) do
+
+local ohString1 = "Game"
+
+game:GetService("ReplicatedStorage").Events.SendTexts:FireServer(ohString1)
+local ohString1 = "Phone"
+
+game:GetService("ReplicatedStorage").Events.SendTexts:FireServer(ohString1)
+local ohString1 = "Computer"
+
+game:GetService("ReplicatedStorage").Events.SendTexts:FireServer(ohString1)
+end
+end
+})
+    
+    
